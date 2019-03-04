@@ -17,8 +17,8 @@ Project with Backbone.JS
 
 ## Setup
 ```bash
-$ git clone https://gitlab.mynisum.com/dmantena/backbone-shopping--cart.git
-$ cd backbone-shopping--cart
+$ git clone https://github.com/mantenadheeraj/Shopping-Cart.git
+$ cd Shopping-Cart
 $ npm i
 $ npm start
 ```
