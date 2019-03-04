@@ -1,0 +1,24 @@
+<div class="btn-select">
+    <select class="select">
+        <option value="">Select an option</option>
+        <option value="low_to_high">Low to High</option>
+        <option value="high_to_low" select>High to Low</option>
+    </select>
+</div>
+
+<div class="row">
+    {{#each items as |item|}}
+    <div class="column {{item.class}} show">
+        <div class="content">
+            <img src="{{item.image}}">
+
+            <div class="addButton">
+                <span class="price">
+                    {{item.price}}
+                </span>
+                <button data-id="{{item.id}}" id="add_to_cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

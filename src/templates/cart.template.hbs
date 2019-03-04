@@ -1,0 +1,56 @@
+<div id="open-cart" class="cart-btn">
+
+    <span class="fa-stack fa-2x has-badge" {{#if cart.quantity}}data-count="{{cart.quantity}}" {{/if}}>
+        <i style="" class="fa fa-shopping-cart fa-stack-2x" id="cart-icon"></i>
+    </span>
+</div>
+
+<div id="cart" class="sidenav ">
+    <span id="close-cart">
+        <i class="fas fa-times"></i>
+    </span>
+
+    <div class="checkout-cart">
+        {{#if cart.items}}
+        <img class="cart-logo" src="../../assets/images/nisum_large.png" />{{#each cart.items as |item|}}
+
+        <table>
+            <thead></thead>
+            <tbody id="card-body">
+                <tr>
+                    <td>
+                        <img class="cart-image" src="{{item.image}} " alt=" ">
+                    </td>
+                    <td class="cart-minus">
+                        <span id="minus">
+                            <i data-id="{{item.id}}" class="fa fa-minus"></i>
+                        </span>
+                    </td>
+                    <td class="cart-quantity">
+                        <input class="cart-quantity-input" type="text " name="quantity " id="input-value" value="{{item.quantity}} ">
+                    </td>
+                    <td class="cart-plus">
+                        <span id="plus">
+                            <i data-id="{{item.id}}" class="fa fa-plus"></i>
+                        </span>
+                    </td>
+                    <td class="cart-sub-total ">{{ toFixed ( multiply item.price item.quantity )}}</td>
+                </tr>
+                <hr/>
+
+            </tbody>
+        </table>
+        {{/each}} {{else}} cart is empty {{/if}}
+        <hr/>
+        <div>
+            <div class="cart-total ">
+                <div class="Total-price-label">Total Price :</div>
+                <div class="Total-price-value">{{toFixed cart.total_price}}</div>
+            </div>
+        </div>
+        <div id="cart_clear_checkout_buttons">
+            <button id="clear-cart">Clear</button>
+            <button id="checkout-cart">Checkout</button>
+        </div>
+    </div>
+</div>
